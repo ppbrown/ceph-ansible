@@ -43,7 +43,7 @@
     msg: "Either monitor_address, monitor_address_block or monitor_interface must be provided"
   when:
     - mon_group_name in group_names
-    - monitor_address == '0.0.0.0'
+    - monitor_address == 'x.x.x.x'
     - monitor_address_block == 'subnet'
     - monitor_interface == 'interface'
 
@@ -168,7 +168,7 @@
   when:
     - mon_group_name in group_names
     - monitor_interface != "dummy"
-    - monitor_address == "0.0.0.0"
+    - monitor_address == "x.x.x.x"
     - monitor_address_block == "subnet"
 
 - name: include check_ipaddr_mon.yml
@@ -176,7 +176,7 @@
   when:
     - mon_group_name in group_names
     - monitor_interface == "interface"
-    - monitor_address == "0.0.0.0"
+    - monitor_address == "x.x.x.x"
     - monitor_address_block != "subnet"
 
 - name: include check_eth_rgw.yml
